@@ -172,7 +172,7 @@ Botão: **Começar o teste**
 **Bloco B, para professores e escolas:**
 **Leve a Horizon para sua escola**
 Estamos selecionando professores de Física do Ensino Médio para um piloto de 90 dias, sem custo. [provisório: confirmar antes de publicar]
-Formulário em 2 etapas (os campos estão em [design.md](design.md), seção 5). Botão: **Quero participar do piloto**
+Formulário em 2 etapas (os campos estão em [landing-design.md](landing-design.md), seção 5). Botão: **Quero participar do piloto**
 Abaixo do formulário: **Prefere conversar? Fale com a gente:** ✉ Igor.c.l.oficial@outlook.com · WhatsApp (54) 9 9930-6265
 Confirmação: **Recebemos seu contato! Vamos responder em até 2 dias úteis.** + botão **Enquanto isso, faça o teste de Física**
 

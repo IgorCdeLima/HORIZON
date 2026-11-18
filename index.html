@@ -3,34 +3,625 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Horizon · Física</title>
+  <title>Horizon · Avaliação formativa para o Ensino Médio</title>
+  <meta name="description" content="A Horizon acompanha o aluno antes e depois de cada aula e mostra ao professor o que a turma ainda não entendeu — e por quê. Piloto em Física no Ensino Médio." />
+  <meta name="theme-color" content="#0b2350" />
+
+  <!-- Compartilhamento (WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Horizon · Avalie o raciocínio, não só a resposta" />
+  <meta property="og:description" content="Avaliação formativa diária para o Ensino Médio: diagnóstico antes da aula, verificação depois e relatório do raciocínio da turma." />
+  <meta property="og:image" content="img/logo.webp" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="icon" href="img/logo.webp" type="image/webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/landing.css" />
+  <script>
+    // Ativa as animações. Se o landing.js não rodar, mostra tudo mesmo assim.
+    document.documentElement.classList.add("js");
+    window.addEventListener("load", function () {
+      setTimeout(function () { if (!window.horizonPronto) document.documentElement.classList.remove("js"); }, 1500);
+    });
+  </script>
 </head>
 <body>
-  <main class="moldura">
-    <header class="topo">
-      <div class="marca">
-        <span class="marca-logo" aria-hidden="true"></span>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ================= MENU ================= -->
+  <header class="topo" id="topo">
+    <div class="container topo-interno">
+      <a class="marca" href="#inicio" aria-label="Horizon — início">
+        <span class="marca-selo"><img src="img/logo.webp" alt="" width="40" height="40" /></span>
         <span class="marca-nome">Horizon</span>
-      </div>
-      <span id="etapa-rotulo" class="etapa-rotulo"></span>
-      <span id="cronometro" class="cronometro" hidden aria-label="Tempo decorrido">00:00</span>
-    </header>
+      </a>
 
-    <div class="progresso" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-      <div id="progresso-barra" class="progresso-barra"></div>
+      <button class="menu-botao" id="menu-botao" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu" id="menu" aria-label="Seções da página">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#metodo">O método</a>
+        <a href="#para-quem">Para quem</a>
+        <a href="#piloto">Piloto</a>
+        <a class="botao botao-pequeno" href="formulario/">Teste seus conhecimentos</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Palco do carrossel: o conteúdo é apagado e recriado pelo script.js -->
-    <div id="palco" class="palco" aria-live="polite"></div>
+  <main id="conteudo">
+
+    <!-- ================= 1. HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grade">
+        <div class="hero-texto">
+          <p class="etiqueta etiqueta-clara">Avaliação formativa · Ensino Médio · Física</p>
+          <h1>Avalie o raciocínio, <span class="destaque">não só a resposta.</span></h1>
+          <p class="hero-sub">
+            A Horizon acompanha o aluno antes e depois de cada aula e mostra ao professor
+            <em>o que</em> a turma ainda não entendeu e <em>por quê</em>, com relatórios prontos
+            em minutos, não em horas de correção.
+          </p>
+          <div class="botoes">
+            <a class="botao" href="formulario/">Teste seus conhecimentos em Física</a>
+            <a class="botao botao-contorno" href="#piloto">Quero levar para minha escola</a>
+          </div>
+          <ul class="hero-apoio" aria-label="Resumo">
+            <li>3 passos por aula</li>
+            <li>Menos de 5 min para o aluno</li>
+            <li>Relatório por turma</li>
+          </ul>
+        </div>
+
+        <!-- Mockup do painel (HTML, não imagem) -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="tablet">
+            <div class="tablet-topo">
+              <span class="ponto"></span><span class="ponto"></span><span class="ponto"></span>
+              <strong>Turma 2ºA · Leis de Newton</strong>
+            </div>
+            <div class="mapa">
+              <div class="mapa-cabecalho">
+                <span></span><span>Identificar</span><span>Relacionar</span><span>Comparar</span><span>Explicar</span>
+              </div>
+              <div class="mapa-linha"><span class="mapa-rotulo">Grupo 1 · 9 alunos</span><i class="n-b"></i><i class="n-b"></i><i class="n-a"></i><i class="n-b"></i></div>
+              <div class="mapa-linha"><span class="mapa-rotulo">Grupo 2 · 8 alunos</span><i class="n-b"></i><i class="n-c"></i><i class="n-c"></i><i class="n-d"></i></div>
+              <div class="mapa-linha"><span class="mapa-rotulo">Grupo 3 · 7 alunos</span><i class="n-c"></i><i class="n-c"></i><i class="n-d"></i><i class="n-d"></i></div>
+              <div class="mapa-linha"><span class="mapa-rotulo">Grupo 4 · 4 alunos</span><i class="n-d"></i><i class="n-d"></i><i class="n-d"></i><i class="n-d"></i></div>
+            </div>
+            <div class="tablet-alerta">
+              <strong>Lacuna principal:</strong> “parado = sem força” · 11 alunos<br />
+              <span>Sugestão: retomar equilíbrio de forças nos 10 primeiros minutos</span>
+            </div>
+          </div>
+
+          <div class="celular">
+            <div class="celular-notch"></div>
+            <p class="celular-etiqueta">Diagnóstico · 1 de 2</p>
+            <p class="celular-pergunta">O caixote não se move. Isso quer dizer que nenhuma força atua sobre ele?</p>
+            <div class="celular-resposta">Explique seu raciocínio…<span class="cursor"></span></div>
+            <div class="celular-botao">Próxima</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. PROBLEMA ================= -->
+    <section class="secao" id="problema">
+      <div class="container">
+        <div class="cabeca-secao centro revelar">
+          <p class="etiqueta">O problema</p>
+          <h2>A nota mostra que o aluno errou. Não mostra onde.</h2>
+          <p>
+            Em Física, quase todo erro de conta começa num erro de ideia. Quando o professor recebe
+            só “certo” ou “errado”, a lacuna passa despercebida e se acumula no conteúdo seguinte.
+          </p>
+        </div>
+
+        <!-- <div class="grade-3">
+          <article class="cartao-numero revelar">
+            <p class="numero"><span data-contar="300">300</span>–<span data-contar="400">400</span></p>
+            <p>alunos atendidos por um professor de Física em até 10 turmas</p>
+          </article>
+          <article class="cartao-numero revelar">
+            <p class="numero"><span data-contar="3">3</span> min</p>
+            <p>é o limite de tempo por aula. Ferramentas que pedem mais são abandonadas já na 2ª semana.</p>
+          </article>
+          <article class="cartao-numero revelar">
+            <p class="numero"><span data-contar="0">0</span></p>
+            <p>plataformas no Brasil que unem diagnóstico antes da aula, verificação depois e relatório por raciocínio em Física</p>
+          </article>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- ================= 3. COMO FUNCIONA ================= -->
+    <section class="secao secao-alt" id="como-funciona">
+      <div class="container">
+        <div class="cabeca-secao centro revelar">
+          <p class="etiqueta">Como funciona</p>
+          <h2>Um novo jeito de avaliar, em 3 passos</h2>
+          <p>A avaliação acontece junto com a aula, todos os dias, e não só no dia da prova.</p>
+        </div>
+
+        <ol class="passos">
+          <li class="passo revelar">
+            <span class="passo-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+            </span>
+            <span class="passo-num">Passo 1</span>
+            <h3>Diagnóstico</h3>
+            <p class="passo-pergunta">O que o aluno já sabe?</p>
+            <p>Antes da aula, o aluno responde de 2 a 3 perguntas curtas sobre uma situação do dia a dia e explica o próprio raciocínio. Leva menos de 5 minutos.</p>
+          </li>
+          <li class="passo revelar">
+            <span class="passo-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>
+            </span>
+            <span class="passo-num">Passo 2</span>
+            <h3>Conhecimento</h3>
+            <p class="passo-pergunta">A aula direcionada ao que falta.</p>
+            <p>O professor chega à aula sabendo quais ideias erradas apareceram na turma e começa por elas. O aluno estuda com aula ou vídeo focado nesses pontos.</p>
+          </li>
+          <li class="passo revelar">
+            <span class="passo-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 20V4"/><path d="M4 20h16"/><path d="M8 16v-4"/><path d="M12 16V8"/><path d="M16 16v-6"/></svg>
+            </span>
+            <span class="passo-num">Passo 3</span>
+            <h3>Relatório e avaliação</h3>
+            <p class="passo-pergunta">O que mudou depois da aula?</p>
+            <p>Uma pergunta parecida com a do diagnóstico mede o avanço. A Horizon compara o antes e o depois e gera o relatório da turma e de cada aluno.</p>
+          </li>
+        </ol>
+        <p class="ciclo revelar"><span aria-hidden="true">↻</span> O ciclo se repete a cada aula</p>
+      </div>
+    </section>
+
+    <!-- ================= 4. O MÉTODO ================= -->
+    <section class="secao" id="metodo">
+      <div class="container">
+        <div class="cabeca-secao revelar">
+          <p class="etiqueta">O método</p>
+          <h2>Perguntas que mostram como o aluno pensa</h2>
+          <p>
+            Cada pergunta é construída sobre a <strong>taxonomia de Bloom</strong>. Não basta acertar:
+            o aluno precisa <em>identificar</em>, <em>relacionar</em>, <em>comparar</em>, <em>calcular</em>
+            e <em>justificar</em>. A Horizon procura essas ações nas palavras e nas relações lógicas que o
+            aluno usa para explicar a resposta.
+          </p>
+        </div>
+
+        <div class="metodo-grade">
+          <!-- Exemplo do caixote -->
+          <div class="exemplo revelar">
+            <figure class="exemplo-figura">
+              <img src="img/caixote.webp" alt="Pessoa empurrando um caixote que permanece parado sobre o piso" width="900" height="600" loading="lazy" />
+              <figcaption>
+                <strong>Situação:</strong> uma pessoa empurra um caixote, mas ele não se move. Ela diz:
+                “Se não se move, nenhuma força atua sobre ele.”
+              </figcaption>
+            </figure>
+
+            <ul class="respostas">
+              <li class="resposta">
+                <p>“Está certo, se fosse força ele andaria.”</p>
+                <span class="selo n-d" title="Não consolidado">D</span>
+                <small>Não identifica as forças</small>
+              </li>
+              <li class="resposta">
+                <p>“Tem o empurrão e o atrito, e eles se anulam.”</p>
+                <span class="selo n-c" title="Em desenvolvimento">C</span>
+                <small>Identifica e compara, mas a explicação está incompleta</small>
+              </li>
+              <li class="resposta">
+                <p>“Empurrão e atrito se equilibram na horizontal, peso e normal na vertical. A resultante é nula, então ele continua parado.”</p>
+                <span class="selo n-b" title="Consolidado">B</span>
+                <small>Identifica, relaciona, compara e explica</small>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pirâmide de Bloom -->
+          <div class="bloom revelar">
+            <p class="bloom-titulo">Taxonomia de Bloom</p>
+            <ol class="piramide" aria-label="Níveis da taxonomia de Bloom, do mais complexo ao mais simples">
+              <li style="--l:38%"><strong>Criar</strong></li>
+              <li style="--l:50%" class="ativo"><strong>Avaliar</strong><span>selecionar · justificar</span></li>
+              <li style="--l:62%"><strong>Analisar</strong></li>
+              <li style="--l:74%" class="ativo"><strong>Aplicar</strong><span>calcular · utilizar</span></li>
+              <li style="--l:87%" class="ativo"><strong>Compreender</strong><span>relacionar · interpretar · comparar · explicar</span></li>
+              <li style="--l:100%" class="ativo"><strong>Lembrar</strong><span>identificar · listar</span></li>
+            </ol>
+            <p class="bloom-legenda"><span class="bloom-marca"></span> níveis avaliados nas sequências de Física</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. CONCEITOS ================= -->
+    <section class="secao secao-alt" id="conceitos">
+      <div class="container">
+        <div class="cabeca-secao centro revelar">
+          <p class="etiqueta">Conceitos em vez de média</p>
+          <h2>No lugar do 6,0, um retrato do aprendizado</h2>
+          <p>A média esconde lacunas: um 10 compensa um 2. A Horizon descreve cada habilidade em 4 níveis, para que aluno e professor saibam qual é o próximo passo.</p>
+        </div>
+
+        <div class="niveis" role="list">
+          <article class="nivel nivel-d revelar" role="listitem">
+            <span class="nivel-letra">D</span>
+            <h3>Não consolidado</h3>
+            <p>Usa ideias intuitivas incorretas. Precisa de retomada.</p>
+          </article>
+          <article class="nivel nivel-c revelar" role="listitem">
+            <span class="nivel-letra">C</span>
+            <h3>Em desenvolvimento</h3>
+            <p>Reconhece as grandezas, mas ainda não articula a explicação.</p>
+          </article>
+          <article class="nivel nivel-b revelar" role="listitem">
+            <span class="nivel-letra">B</span>
+            <h3>Consolidado</h3>
+            <p>Explica, representa e calcula corretamente.</p>
+          </article>
+          <article class="nivel nivel-a revelar" role="listitem">
+            <span class="nivel-letra">A</span>
+            <h3>Avançado</h3>
+            <p>Transfere o conceito para situações novas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. PARA QUEM ================= -->
+    <section class="secao" id="para-quem">
+      <div class="container">
+        <div class="cabeca-secao centro revelar">
+          <p class="etiqueta">Para quem</p>
+          <h2>Feito para quem está na sala de aula e para quem cuida da escola</h2>
+        </div>
+
+        <div class="grade-3">
+          <article class="cartao-publico revelar">
+            <div class="mini-tela" aria-hidden="true">
+              <div class="mini-grupos"><i class="n-b"></i><i class="n-c"></i><i class="n-d"></i><i class="n-b"></i><i class="n-a"></i><i class="n-c"></i></div>
+              <span class="mini-botao">Aplicar ao grupo ✓</span>
+            </div>
+            <p class="publico">Professor</p>
+            <h3>Saiba o que a turma não entendeu antes de começar a aula</h3>
+            <p>Respostas parecidas chegam agrupadas. Você confere uma amostra e aplica a avaliação ao grupo inteiro com um clique. A palavra final é sempre sua.</p>
+          </article>
+
+          <article class="cartao-publico revelar">
+            <div class="mini-tela" aria-hidden="true">
+              <div class="mini-devolutiva">
+                <span class="selo n-c">C</span>
+                <span class="mini-seta">→</span>
+                <span class="selo n-b">B</span>
+              </div>
+              <span class="mini-texto">Próximo passo: comparar as forças nas duas direções</span>
+            </div>
+            <p class="publico">Aluno</p>
+            <h3>Entenda onde você errou, não só que errou</h3>
+            <p>Devolutivas claras sobre cada etapa do raciocínio e indicação do que estudar em seguida.</p>
+          </article>
+
+          <article class="cartao-publico revelar">
+            <div class="mini-tela" aria-hidden="true">
+              <div class="mini-barras"><i style="--h:40%"></i><i style="--h:55%"></i><i style="--h:50%"></i><i style="--h:70%"></i><i style="--h:82%"></i></div>
+              <span class="mini-texto">Turmas em atenção: 2 de 8</span>
+            </div>
+            <p class="publico">Coordenação</p>
+            <h3>Veja o risco de reprovação no início, não no fim</h3>
+            <p>Painel por turma com a evolução das habilidades e relatórios prontos para apresentar às famílias.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. TEMPO DO PROFESSOR ================= -->
+    <section class="secao secao-escura" id="tempo">
+      <div class="container">
+        <div class="cabeca-secao centro revelar">
+          <p class="etiqueta etiqueta-clara">Respeito ao tempo do professor</p>
+          <h2>Mais evidências, sem mais trabalho</h2>
+          <p>A Horizon foi desenhada a partir de um limite: o tempo do professor. As perguntas vêm prontas, alinhadas à BNCC e às habilidades do ENEM. A correção é agrupada e o relatório sai sozinho.</p>
+        </div>
+
+        <div class="grade-3 metas">
+          <div class="meta revelar">
+            <p class="numero">até <span data-contar="4">4</span> min</p>
+            <p>por semana, por turma, de trabalho do professor</p>
+          </div>
+          <div class="meta revelar">
+            <p class="numero"><span data-contar="75">75</span>%</p>
+            <p>ou mais dos alunos concluindo o diagnóstico</p>
+          </div>
+          <div class="meta revelar">
+            <p class="numero"><span data-contar="80">80</span>%</p>
+            <p>das turmas com lacuna detectada recebendo intervenção em sala</p>
+          </div>
+        </div>
+        <p class="aviso-metas revelar">Metas do piloto · ainda não são resultados medidos</p>
+      </div>
+    </section>
+
+    <!-- ================= 8. DIFERENCIAL ================= -->
+    <section class="secao" id="diferencial">
+      <div class="container">
+        <div class="cabeca-secao centro revelar">
+          <p class="etiqueta">Por que a Horizon é diferente</p>
+          <h2>O que as outras ferramentas não fazem</h2>
+          <p>Bancos de questões dão o percentual de acerto. Formulários deixam a tabulação para o professor. Plataformas de vídeo não conversam com a escola. A Horizon fecha o ciclo: diagnóstico, aula e relatório do raciocínio.</p>
+        </div>
+
+        <div class="tabela-envoltorio revelar">
+          <table class="comparativo">
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr">Recurso</span></th>
+                <th scope="col">Bancos de questões</th>
+                <th scope="col">Formulários genéricos</th>
+                <th scope="col">Plataformas de vídeo</th>
+                <th scope="col" class="col-horizon">Horizon</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Diagnóstico antes da aula</th>
+                <td data-rotulo="Bancos de questões"><span class="nao">—</span></td>
+                <td data-rotulo="Formulários genéricos"><span class="parcial">parcial</span></td>
+                <td data-rotulo="Plataformas de vídeo"><span class="nao">—</span></td>
+                <td data-rotulo="Horizon" class="col-horizon"><span class="sim">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Avalia a justificativa</th>
+                <td data-rotulo="Bancos de questões"><span class="nao">—</span></td>
+                <td data-rotulo="Formulários genéricos"><span class="nao">—</span></td>
+                <td data-rotulo="Plataformas de vídeo"><span class="nao">—</span></td>
+                <td data-rotulo="Horizon" class="col-horizon"><span class="sim">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Relatório por habilidade</th>
+                <td data-rotulo="Bancos de questões"><span class="nao">—</span></td>
+                <td data-rotulo="Formulários genéricos"><span class="nao">—</span></td>
+                <td data-rotulo="Plataformas de vídeo"><span class="nao">—</span></td>
+                <td data-rotulo="Horizon" class="col-horizon"><span class="sim">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Pouco tempo do professor</th>
+                <td data-rotulo="Bancos de questões"><span class="parcial">parcial</span></td>
+                <td data-rotulo="Formulários genéricos"><span class="nao">—</span></td>
+                <td data-rotulo="Plataformas de vídeo"><span class="sim">✓</span></td>
+                <td data-rotulo="Horizon" class="col-horizon"><span class="sim">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 9. TESTE + PILOTO ================= -->
+    <section class="secao secao-alt" id="piloto">
+      <div class="container">
+        <div class="cabeca-secao centro revelar">
+          <p class="etiqueta">Veja na prática</p>
+          <h2>Experimente agora ou leve para sua escola</h2>
+        </div>
+
+        <div class="cta-grade">
+          <!-- Bloco do piloto (primeiro no celular) -->
+          <div class="cartao-form revelar">
+            <p class="publico">Professores e escolas</p>
+            <h3>Leve a Horizon para sua escola</h3>
+            <p>Estamos selecionando professores de Física do Ensino Médio para um <strong>piloto de 90 dias, sem custo</strong>.</p>
+
+            <!-- Etapa 1 -->
+            <form id="form-etapa-1" class="form" novalidate>
+              <p class="form-etapa">Etapa 1 de 2 · leva 1 minuto</p>
+              <div class="campo">
+                <label for="f-nome">Nome</label>
+                <input id="f-nome" name="nome" type="text" autocomplete="name" required />
+              </div>
+              <div class="campo">
+                <label for="f-email">E-mail</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="campo">
+                <label for="f-whatsapp">WhatsApp <span class="opcional">(opcional)</span></label>
+                <input id="f-whatsapp" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(54) 9 9999-9999" />
+              </div>
+              <fieldset class="campo">
+                <legend>Você é…</legend>
+                <div class="opcoes">
+                  <label class="opcao"><input type="radio" name="perfil" value="Professor(a)" required /> Professor(a)</label>
+                  <label class="opcao"><input type="radio" name="perfil" value="Coordenação/Direção" /> Coordenação/Direção</label>
+                  <label class="opcao"><input type="radio" name="perfil" value="Outro" /> Outro</label>
+                </div>
+              </fieldset>
+              <div class="campo">
+                <label for="f-escola">Escola e cidade</label>
+                <input id="f-escola" name="escola" type="text" placeholder="Ex.: Colégio Exemplo · Caxias do Sul" required />
+              </div>
+              <label class="consentimento">
+                <input type="checkbox" name="lgpd" value="Sim" required />
+                <span>Concordo em ser contatado(a) pela Horizon sobre o piloto. Meus dados serão usados apenas para esse fim (LGPD).</span>
+              </label>
+              <button class="botao botao-largo" type="submit">Quero participar do piloto</button>
+            </form>
+
+            <!-- Etapa 2 (opcional) -->
+            <form id="form-etapa-2" class="form" hidden>
+              <p class="form-etapa">Etapa 2 de 2 · opcional, mas nos ajuda a preparar o piloto</p>
+              <fieldset class="campo">
+                <legend>Rede</legend>
+                <div class="opcoes">
+                  <label class="opcao"><input type="radio" name="rede" value="Particular" /> Particular</label>
+                  <label class="opcao"><input type="radio" name="rede" value="Pública" /> Pública</label>
+                  <label class="opcao"><input type="radio" name="rede" value="Outra" /> Outra</label>
+                </div>
+              </fieldset>
+              <fieldset class="campo">
+                <legend>Séries em que atua</legend>
+                <div class="opcoes">
+                  <label class="opcao"><input type="checkbox" name="series" value="1º ano" /> 1º ano</label>
+                  <label class="opcao"><input type="checkbox" name="series" value="2º ano" /> 2º ano</label>
+                  <label class="opcao"><input type="checkbox" name="series" value="3º ano" /> 3º ano</label>
+                </div>
+              </fieldset>
+              <div class="campo-duplo">
+                <div class="campo">
+                  <label for="f-turmas">Turmas de Física</label>
+                  <input id="f-turmas" name="turmas" type="number" min="1" max="50" inputmode="numeric" />
+                </div>
+                <div class="campo">
+                  <label for="f-alunos">Alunos, aprox.</label>
+                  <select id="f-alunos" name="alunos">
+                    <option value="">Selecione</option>
+                    <option>1–100</option>
+                    <option>100–300</option>
+                    <option>300+</option>
+                  </select>
+                </div>
+              </div>
+              <fieldset class="campo">
+                <legend>O que mais te interessa?</legend>
+                <div class="opcoes">
+                  <label class="opcao"><input type="checkbox" name="interesses" value="Diagnóstico" /> Diagnóstico</label>
+                  <label class="opcao"><input type="checkbox" name="interesses" value="Relatórios" /> Relatórios</label>
+                  <label class="opcao"><input type="checkbox" name="interesses" value="Economia de tempo" /> Economia de tempo</label>
+                  <label class="opcao"><input type="checkbox" name="interesses" value="Outro" /> Outro</label>
+                </div>
+              </fieldset>
+              <div class="campo">
+                <label for="f-mensagem">Algo que queira nos contar? <span class="opcional">(opcional)</span></label>
+                <textarea id="f-mensagem" name="mensagem" rows="3"></textarea>
+              </div>
+              <div class="form-acoes">
+                <button class="botao" type="submit">Enviar</button>
+                <button class="link-botao" type="button" id="pular-etapa-2">Pular esta etapa</button>
+              </div>
+            </form>
+
+            <!-- Confirmação -->
+            <div id="form-sucesso" class="form-sucesso" hidden tabindex="-1">
+              <span class="sucesso-icone" aria-hidden="true">✓</span>
+              <h4>Recebemos seu contato!</h4>
+              <p>Vamos responder em até 2 dias úteis.</p>
+              <a class="botao botao-contorno-escuro" href="formulario/">Enquanto isso, faça o teste de Física</a>
+            </div>
+
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+
+            <div class="contato-direto">
+              <p>Prefere conversar? Fale com a gente:</p>
+              <a href="mailto:Igor.c.l.oficial@outlook.com" data-contato="email" class="contato-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span data-texto></span>
+              </a>
+              <a href="https://wa.me/5554999306265" data-contato="whatsapp" class="contato-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+                <span data-texto></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bloco do teste -->
+          <div class="cartao-teste revelar">
+            <p class="publico publico-claro">Alunos e curiosos</p>
+            <h3>Teste seus conhecimentos em Física</h3>
+            <p>Responda ao diagnóstico, assista ao vídeo e veja como você evolui. Leva cerca de 20 minutos.</p>
+            <ul class="teste-etapas">
+              <li><span>1</span> Diagnóstico</li>
+              <li><span>2</span> Vídeo</li>
+              <li><span>3</span> Pós-aula</li>
+            </ul>
+            <a class="botao botao-claro" href="formulario/">Começar o teste</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 10. QUEM SOMOS ================= -->
+    <section class="secao" id="quem-somos">
+      <div class="container quem-somos revelar">
+        <span class="marca-selo marca-selo-grande"><img src="img/logo.webp" alt="Logo da Horizon" width="96" height="96" loading="lazy" /></span>
+        <div>
+          <p class="etiqueta">Quem somos</p>
+          <h2>Nascida na universidade, construída com professores</h2>
+          <p>
+            A Horizon nasceu no programa <strong>StartUCS</strong>, da Universidade de Caxias do Sul, com
+            mentoria de Cesar Pisetta. Ela é desenvolvida por Breno Cechinato de Lima, Igor Cechinato de Lima
+            e Rudson da Rosa Pedroso.
+          </p>
+          <p class="selo-startucs">StartUCS · Universidade de Caxias do Sul</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 11. FAQ ================= -->
+    <section class="secao secao-alt" id="faq">
+      <div class="container estreito">
+        <div class="cabeca-secao centro revelar">
+          <p class="etiqueta">Perguntas frequentes</p>
+          <h2>Dúvidas comuns</h2>
+        </div>
+
+        <div class="faq revelar">
+          <details>
+            <summary>A Horizon substitui as provas da escola?</summary>
+            <p>Ela substitui a ideia de avaliar só no dia da prova. A escola pode manter suas avaliações. A Horizon acompanha o aluno em todas as aulas e mostra onde ele precisa de ajuda.</p>
+          </details>
+          <details>
+            <summary>O professor precisa criar as perguntas?</summary>
+            <p>Não. As sequências de perguntas, as rubricas e os erros típicos já vêm prontos.</p>
+          </details>
+          <details>
+            <summary>Quem dá a nota final, a IA ou o professor?</summary>
+            <p>O professor. A tecnologia só organiza e agrupa as respostas. Nenhuma avaliação é publicada sem a validação dele.</p>
+          </details>
+          <details>
+            <summary>Funciona no celular?</summary>
+            <p>Sim. O aluno responde pelo celular e o professor vê o painel em qualquer tela.</p>
+          </details>
+          <details>
+            <summary>E os dados dos alunos?</summary>
+            <p>São tratados de acordo com a LGPD e usados só para fins pedagógicos.</p>
+          </details>
+          <details>
+            <summary>Quais disciplinas?</summary>
+            <p>O piloto começa por Física. Química, Matemática e Biologia estão no plano de expansão.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <noscript>Este formulário precisa do JavaScript ativado.</noscript>
+  <!-- ================= 12. RODAPÉ ================= -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <div>
+        <a class="marca marca-clara" href="#inicio">
+          <span class="marca-selo"><img src="img/logo.webp" alt="" width="40" height="40" loading="lazy" /></span>
+          <span class="marca-nome">Horizon</span>
+        </a>
+        <p>Avaliação formativa para o Ensino Médio.<br />Projeto StartUCS · Universidade de Caxias do Sul · Caxias do Sul, RS</p>
+      </div>
+      <div class="rodape-contato">
+        <p class="rodape-titulo">Contato</p>
+        <a href="mailto:Igor.c.l.oficial@outlook.com" data-contato="email"><span data-texto></span></a>
+        <a href="https://wa.me/5554999306265" data-contato="whatsapp"><span data-texto></span></a>
+      </div>
+    </div>
+    <div class="container rodape-base">
+      <p>© 2026 Horizon</p>
+      <a href="#inicio">Voltar ao topo ↑</a>
+    </div>
+  </footer>
 
-  <script src="js/perguntas.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/contato.js"></script>
+  <script src="js/landing.js"></script>
 </body>
 </html>

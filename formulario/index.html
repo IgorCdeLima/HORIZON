@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horizon · Física</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="moldura">
+    <header class="topo">
+      <div class="marca">
+        <span class="marca-logo" aria-hidden="true"></span>
+        <span class="marca-nome">Horizon</span>
+      </div>
+      <span id="etapa-rotulo" class="etapa-rotulo"></span>
+      <span id="cronometro" class="cronometro" hidden aria-label="Tempo decorrido">00:00</span>
+    </header>
+
+    <div class="progresso" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div id="progresso-barra" class="progresso-barra"></div>
+    </div>
+
+    <!-- Palco do carrossel: o conteúdo é apagado e recriado pelo script.js -->
+    <div id="palco" class="palco" aria-live="polite"></div>
+  </main>
+
+  <noscript>Este formulário precisa do JavaScript ativado.</noscript>
+
+  <script src="js/perguntas.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

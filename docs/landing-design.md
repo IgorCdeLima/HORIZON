@@ -1,6 +1,6 @@
 # Landing page Horizon: estrutura de design (etapa 4)
 
-> Os textos estão em [textos.md](textos.md). Este arquivo define **como** a página se organiza: identidade visual, grade, componentes, cada seção no desktop e no celular, e o formulário de captação.
+> Os textos estão em [landing-textos.md](landing-textos.md). Este arquivo define **como** a página se organiza: identidade visual, grade, componentes, cada seção no desktop e no celular, e o formulário de captação.
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Item | Decisão | Motivo |
 |---|---|---|
-| Onde fica | Pasta `landing/` (`landing/index.html`) | Não quebra o formulário dos alunos, que é o `index.html` da raiz |
+| Onde fica | Raiz do projeto (`index.html`) | É a página que abre primeiro. O formulário dos alunos fica em `formulario/` |
 | Tecnologia | HTML + CSS + JS puro, sem framework | Igual ao formulário: hospedagem estática (GitHub Pages) e manutenção simples |
 | Tipo de página | Uma página só, com rolagem e menu âncora | Leitura linear: problema → solução → prova → ação |
 | Responsividade | *Mobile first*, quebras em **640px** e **1024px** | Grande parte do público chega pelo celular (link enviado no WhatsApp ou em apresentação) |
@@ -224,9 +224,9 @@ Botão: **Enviar** · Link: *Pular esta etapa*
 | Arquivo | Função |
 |---|---|
 | [apps-script/Interessados.gs](../apps-script/Interessados.gs) | Recebe os dados na planilha **"Horizon · Interessados"**, aba "Interessados". A etapa 1 cria a linha e a etapa 2 **completa a mesma linha** pelo "ID do envio", sem duplicar. Também cria as colunas "Recebido em", "Atualizado em", "Origem" e **"Status"** (começa como "Novo", para a equipe acompanhar o atendimento). |
-| [landing/js/contato.js](js/contato.js) | Valida, aplica máscara no WhatsApp, envia as duas etapas e mostra a confirmação. Sem a URL configurada, funciona em **modo de teste**: nada é enviado e os dados aparecem no console. Se a etapa 2 falhar, a pessoa não fica travada, porque o contato já foi salvo. |
+| [js/contato.js](../js/contato.js) | Valida, aplica máscara no WhatsApp, envia as duas etapas e mostra a confirmação. Sem a URL configurada, funciona em **modo de teste**: nada é enviado e os dados aparecem no console. Se a etapa 2 falhar, a pessoa não fica travada, porque o contato já foi salvo. |
 
-**Origem do contato:** links com `?origem=nome` (ex.: `landing/?origem=apresentacao-startucs`) ficam registrados na coluna "Origem". Assim dá para saber qual apresentação ou mensagem trouxe cada interessado.
+**Origem do contato:** links com `?origem=nome` (ex.: `?origem=apresentacao-startucs` no fim do endereço do site) ficam registrados na coluna "Origem". Assim dá para saber qual apresentação ou mensagem trouxe cada interessado.
 
 ### Contato direto (sempre visível)
 Abaixo do formulário: **"Prefere conversar? Fale com a gente:"**
@@ -254,5 +254,5 @@ Os dois também aparecem no rodapé. Os dados ficam centralizados em `CONTATO_CO
 - [x] E-mail e WhatsApp de contato.
 - [x] Script da planilha e JS do formulário preparados.
 - [ ] Criar a planilha "Horizon · Interessados", colar `apps-script/Interessados.gs`, implantar e colar a URL em `CONTATO_CONFIG.URL_PLANILHA` (passo a passo no README).
-- [ ] Endereço do teste de Física: por enquanto, `../index.html` (o formulário da raiz).
+- [x] Endereço do teste de Física: `formulario/`.
 - [ ] Confirmar o texto "piloto de 90 dias, sem custo" antes de divulgar.

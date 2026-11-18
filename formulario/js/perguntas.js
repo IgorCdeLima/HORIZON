@@ -10,7 +10,7 @@
                 { tipo: "texto",   conteudo: "..." }
                 { tipo: "citacao", conteudo: "..." }
                 { tipo: "lista",   itens: ["...", "..."] }
-                { tipo: "imagem",  src: "img/arquivo.png", alt: "descrição" }
+                { tipo: "imagem",  src: "../img/arquivo.png", alt: "descrição" }
                 { tipo: "nota",    conteudo: "..." }          (texto menor, em destaque)
                 { tipo: "tabela",  cabecalho: [...], linhas: [[...], [...]] }
                 { tipo: "comando", conteudo: "..." }          (o que o aluno deve fazer)
@@ -51,7 +51,7 @@ const PERGUNTAS_DIAGNOSTICAS = [
     blocos: [
       { tipo: "texto", conteudo: "Uma pessoa empurra um caixote sobre um piso horizontal e áspero, mas ele permanece parado. Ao observar isso, ela afirma:" },
       { tipo: "citacao", conteudo: "Se o caixote não se move, nenhuma força está atuando sobre ele." },
-      { tipo: "imagem", src: "img/pergunta_01.jpeg", alt: "Pessoa empurrando horizontalmente um caixote sobre um piso áspero" },
+      { tipo: "imagem", src: "../img/pergunta_01.jpeg", alt: "Pessoa empurrando horizontalmente um caixote sobre um piso áspero" },
       { tipo: "nota", conteudo: "Considere o empurrão horizontal, desconsidere a resistência do ar e suponha que o caixote não tombe." },
       { tipo: "comando", conteudo: "Essa afirmação está correta? Explique seu raciocínio, considerando quais forças atuam sobre o caixote, quem ou o que exerce cada uma e como elas se relacionam para que ele permaneça parado." },
     ],
@@ -68,7 +68,7 @@ const PERGUNTAS_DIAGNOSTICAS = [
       { tipo: "texto", conteudo: "Para compreender a situação, ele representa quatro forças que atuam sobre o caixote:" },
       { tipo: "lista", itens: ["Força de empurrão — FE.", "Força de atrito estático — Fat.", "Peso — P.", "Força normal — N."] },
       { tipo: "nota", conteudo: "Desconsidere a resistência do ar e suponha que o caixote não tombe." },
-      { tipo: "imagem", src: "img/pergunta_02.jpeg", alt: "Estudante empurrando o caixote e diagrama com as forças FE, Fat, P e N" },
+      { tipo: "imagem", src: "../img/pergunta_02.jpeg", alt: "Estudante empurrando o caixote e diagrama com as forças FE, Fat, P e N" },
       { tipo: "nota", conteudo: "Os comprimentos das setas são esquemáticos e não informam as intensidades das forças." },
       { tipo: "comando", conteudo: "Com base nas Leis de Newton, qual relação entre as forças explica o equilíbrio horizontal e vertical que mantém o caixote em repouso?" },
     ],
@@ -95,7 +95,7 @@ const PERGUNTAS_DIAGNOSTICAS = [
       { tipo: "texto", conteudo: "A cooperativa tem dinheiro para adquirir qualquer um dos modelos. Uma pessoa afirma:" },
       { tipo: "citacao", conteudo: "Como os dois elevam a mesma carga até a mesma altura, eles aproveitam igualmente a energia. Então devemos escolher apenas pelo menor preço de compra." },
       { tipo: "nota", conteudo: "Considere que as cargas partem e terminam em repouso e que os modelos têm iguais custos de instalação, manutenção e vida útil." },
-      { tipo: "imagem", src: "img/pergunta_03.jpeg", alt: "Modelos A e B elevando caixas iguais até a mesma altura" },
+      { tipo: "imagem", src: "../img/pergunta_03.jpeg", alt: "Modelos A e B elevando caixas iguais até a mesma altura" },
       { tipo: "comando", conteudo: "Você concorda com essa afirmação? Explique qual modelo escolheria para o uso frequente da cooperativa, relacionando o consumo de energia ao trabalho útil de elevação e às possíveis consequências econômicas ou ambientais dessa escolha." },
     ],
     campos: [
@@ -126,7 +126,7 @@ const PERGUNTAS_DIAGNOSTICAS = [
       { tipo: "texto", conteudo: "Em uma atividade escolar, um pequeno motor elétrico será utilizado para elevar uma carga por meio de um cabo." },
       { tipo: "texto", conteudo: "Na condição de funcionamento prevista, o motor precisa receber <strong>12 V</strong> e consome <strong>120 W</strong> de potência elétrica." },
       { tipo: "nota", conteudo: "Considere um modelo simplificado de corrente contínua, com tensão e corrente constantes durante o funcionamento, sem conversores de tensão. Despreze a corrente de partida e as perdas nos fios." },
-      { tipo: "imagem", src: "img/pergunta_05.jpeg", alt: "Fonte de alimentação ligada a um motor elétrico que eleva uma carga por meio de um cabo" },
+      { tipo: "imagem", src: "../img/pergunta_05.jpeg", alt: "Fonte de alimentação ligada a um motor elétrico que eleva uma carga por meio de um cabo" },
       { tipo: "texto", conteudo: "Estão disponíveis três fontes:" },
       { tipo: "tabela",
         cabecalho: ["Fonte", "Tensão de saída", "Corrente máxima fornecida"],
@@ -143,7 +143,7 @@ const PERGUNTAS_DIAGNOSTICAS = [
     titulo: "A marcha para a subida",
     blocos: [
       { tipo: "texto", conteudo: "Uma pessoa está aprendendo a utilizar as marchas de uma bicicleta. Antes de uma subida, consulta o manual e encontra as informações abaixo." },
-      { tipo: "imagem", src: "img/pergunta_06.jpeg", alt: "Vista lateral da transmissão da bicicleta: engrenagem dianteira ligada aos pedais, engrenagem traseira na roda e a corrente entre elas" },
+      { tipo: "imagem", src: "../img/pergunta_06.jpeg", alt: "Vista lateral da transmissão da bicicleta: engrenagem dianteira ligada aos pedais, engrenagem traseira na roda e a corrente entre elas" },
       { tipo: "texto", conteudo: "<strong>Trecho do manual simplificado</strong>" },
       { tipo: "texto", conteudo: "Durante a pedalada, com a transmissão engatada, o número de voltas da roda pode ser calculado pela relação:" },
       { tipo: "citacao", conteudo: "Voltas da roda = Voltas dos pedais × (nº de dentes da engrenagem dianteira ÷ nº de dentes da engrenagem traseira)" },
@@ -170,7 +170,7 @@ const PERGUNTAS_AVALIATIVAS = [
     titulo: "Representando as forças",
     blocos: [
       { tipo: "texto", conteudo: "O caixote continua parado enquanto a pessoa o empurra horizontalmente sobre o piso áspero." },
-      { tipo: "imagem", src: "img/pergunta_01_pos.jpeg", alt: "Pessoa empurrando o caixote, sem setas" },
+      { tipo: "imagem", src: "../img/pergunta_01_pos.jpeg", alt: "Pessoa empurrando o caixote, sem setas" },
       { tipo: "nota", conteudo: "Desconsidere a resistência do ar e suponha que o caixote não tombe." },
       { tipo: "comando", conteudo: "Descreva as setas que você desenharia sobre o caixote para representar as forças que atuam nele. Para cada seta, informe: qual é a força, quem ou o que a exerce, a direção e o sentido (para cima, para baixo, para a direita, para a esquerda) e o comprimento em relação às outras setas. Depois, escreva uma breve explicação de como essas setas representam o equilíbrio que mantém o caixote em repouso." },
     ],
@@ -193,7 +193,7 @@ const PERGUNTAS_AVALIATIVAS = [
         "<strong>N:</strong> normal exercida pelo piso.",
       ] },
       { tipo: "nota", conteudo: "Desconsidere a resistência do ar e suponha que o caixote não tombe." },
-      { tipo: "imagem", src: "img/pergunta_02.jpeg", alt: "Estudante empurrando o caixote e diagrama com as forças FE, Fat, P e N" },
+      { tipo: "imagem", src: "../img/pergunta_02.jpeg", alt: "Estudante empurrando o caixote e diagrama com as forças FE, Fat, P e N" },
       { tipo: "nota", conteudo: "Os comprimentos das setas são esquemáticos e não informam as intensidades das forças." },
       { tipo: "comando", conteudo: "Qual alternativa diferencia corretamente as relações de equilíbrio e de ação e reação nessa situação?" },
     ],
@@ -214,7 +214,7 @@ const PERGUNTAS_AVALIATIVAS = [
       { tipo: "texto", conteudo: "Antes da compra, a cooperativa recebe os resultados de um teste dos equipamentos." },
       { tipo: "texto", conteudo: "Cada modelo elevou uma carga de <strong>100 kg</strong> até uma altura de <strong>6 m</strong>, partindo e terminando em repouso." },
       { tipo: "nota", conteudo: "Considere g = 10 m/s². A energia útil corresponde ao aumento da energia potencial gravitacional da carga." },
-      { tipo: "imagem", src: "img/pergunta_03.jpeg", alt: "Modelos A e B elevando caixas iguais até a mesma altura" },
+      { tipo: "imagem", src: "../img/pergunta_03.jpeg", alt: "Modelos A e B elevando caixas iguais até a mesma altura" },
       { tipo: "texto", conteudo: "A tabela apresenta a energia elétrica consumida por elevação e o preço de compra dos equipamentos." },
       { tipo: "tabela",
         cabecalho: ["Informação", "Modelo A", "Modelo B"],
@@ -236,7 +236,7 @@ const PERGUNTAS_AVALIATIVAS = [
     titulo: "Do gráfico para a tabela",
     blocos: [
       { tipo: "texto", conteudo: "Outro carrinho se desloca em linha reta, sempre no mesmo sentido. O gráfico mostra sua velocidade ao longo de doze segundos. Os trechos entre os pontos são segmentos de reta." },
-      { tipo: "imagem", src: "img/grafico_cinematica_pos.svg", alt: "Gráfico velocidade × tempo com os pontos (0; 0), (3; 3), (6; 6), (9; 6) e (12; 6): trecho crescente de 0 a 6 s e trecho horizontal de 6 a 12 s" },
+      { tipo: "imagem", src: "../img/grafico_cinematica_pos.svg", alt: "Gráfico velocidade × tempo com os pontos (0; 0), (3; 3), (6; 6), (9; 6) e (12; 6): trecho crescente de 0 a 6 s e trecho horizontal de 6 a 12 s" },
       { tipo: "comando", conteudo: "Uma pessoa precisa compreender esse movimento sem visualizar o gráfico. Prepare uma tabela com os valores de tempo e velocidade indicados e uma breve explicação comparando as duas etapas. Inclua a aceleração de cada etapa e o deslocamento total, explicando como obteve esses resultados a partir do gráfico." },
     ],
     campos: [
@@ -252,7 +252,7 @@ const PERGUNTAS_AVALIATIVAS = [
       { tipo: "texto", conteudo: "Outro equipamento utiliza um motor para elevar uma carga de <strong>30 kg</strong> até uma altura de <strong>2 m</strong>, em <strong>10 s</strong>. A carga parte e termina em repouso." },
       { tipo: "texto", conteudo: "O rendimento global da conversão de energia elétrica em energia útil de elevação é de <strong>60%</strong>, e o motor foi projetado para receber <strong>20 V</strong>." },
       { tipo: "nota", conteudo: "Considere g = 10 m/s². Utilize as potências e a corrente médias durante a elevação. Na comparação com as fontes, considere essa corrente média como a corrente de funcionamento do modelo simplificado, desconsiderando picos e variações durante o percurso. Despreze também a corrente de partida e as perdas nos fios. Não há conversores de tensão." },
-      { tipo: "imagem", src: "img/pergunta_05_pos.jpeg", alt: "Motor no alto de uma estrutura elevando uma caixa de 30 kg a uma altura de 2 m" },
+      { tipo: "imagem", src: "../img/pergunta_05_pos.jpeg", alt: "Motor no alto de uma estrutura elevando uma caixa de 30 kg a uma altura de 2 m" },
       { tipo: "texto", conteudo: "Estão disponíveis estas fontes:" },
       { tipo: "tabela",
         cabecalho: ["Fonte", "Tensão de saída", "Corrente máxima fornecida"],
@@ -272,7 +272,7 @@ const PERGUNTAS_AVALIATIVAS = [
       { tipo: "texto", conteudo: "Uma bicicleta diferente possui uma engrenagem dianteira com 36 dentes e duas opções de engrenagem traseira." },
       { tipo: "texto", conteudo: "Ao observar que a configuração D faz a roda girar mais vezes por volta dos pedais, um ciclista comenta:" },
       { tipo: "citacao", conteudo: "Vou usar essa configuração na subida, porque a roda gira mais e isso deve deixar a pedalada mais leve." },
-      { tipo: "imagem", src: "img/pergunta_06_pos.jpeg", alt: "Configurações C e D da transmissão, com as engrenagens dianteira e traseira identificadas" },
+      { tipo: "imagem", src: "../img/pergunta_06_pos.jpeg", alt: "Configurações C e D da transmissão, com as engrenagens dianteira e traseira identificadas" },
       { tipo: "texto", conteudo: "<strong>Trecho do manual simplificado</strong>" },
       { tipo: "lista", itens: [
         "Com a transmissão engatada, calcule as voltas da roda multiplicando as voltas dos pedais pela razão entre o número de dentes da engrenagem dianteira e o da traseira.",
