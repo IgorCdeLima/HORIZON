@@ -32,6 +32,38 @@ A aba **Respostas** e o cabeçalho são criados automaticamente no primeiro envi
 
 > Se você alterar o `Code.gs` depois, vá em **Implantar → Gerenciar implantações → editar (lápis) → Versão: Nova versão**. Assim a URL continua a mesma.
 
+## Landing page
+
+Fica em [landing/](landing/), separada do formulário dos alunos. Para ver, rode o servidor local (veja "Rodar localmente") e abra `http://localhost:8000/landing/`.
+
+```
+landing/index.html        página (12 seções)
+landing/css/landing.css   visual responsivo (celular → 640px → 1024px)
+landing/js/landing.js     menu, animações, contadores e mapa de calor
+landing/js/contato.js     formulário do piloto (2 etapas) + e-mail e WhatsApp
+landing/img/              logo e imagem do caixote otimizadas (WebP)
+landing/textos.md         textos aprovados · landing/design.md  estrutura de design
+```
+
+Os botões "Teste seus conhecimentos" levam a `../index.html`, o formulário dos alunos.
+
+## Planilha de interessados (landing page)
+
+O formulário "Quero participar do piloto" da landing page grava numa **planilha separada**.
+
+1. Crie uma planilha nova chamada **Horizon · Interessados**.
+2. Em **Extensões → Apps Script**, cole o código de [apps-script/Interessados.gs](apps-script/Interessados.gs) e salve.
+3. Implante como **App da Web**, com as mesmas opções do passo 3 acima, e copie a URL (termina em `/exec`).
+4. Cole a URL em [landing/js/contato.js](landing/js/contato.js):
+   ```js
+   URL_PLANILHA: "https://script.google.com/macros/s/XXXX/exec",
+   ```
+5. Para testar, abra a URL no navegador. Deve aparecer `{"ok":true,...}`.
+
+A aba **Interessados** é criada no primeiro envio. Cada contato ocupa uma linha, e a etapa 2 do formulário completa a mesma linha. Use a coluna **Status** (Novo / Contatado / Piloto / Sem interesse) para acompanhar o atendimento.
+
+> Dica: divulgue o link com `?origem=` (ex.: `.../landing/?origem=apresentacao-startucs`). Assim a coluna **Origem** mostra de onde veio cada interessado.
+
 ## Colunas da planilha
 
 | Coluna | Conteúdo |
